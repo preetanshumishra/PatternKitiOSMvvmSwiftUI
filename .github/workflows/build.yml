@@ -1,0 +1,22 @@
+name: Build
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: macos-26
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build for iOS Simulator
+        run: |
+          xcodebuild build \
+            -project PatternKitiOSMvvmSwiftUI.xcodeproj \
+            -scheme PatternKitiOSMvvmSwiftUI \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO

@@ -1,0 +1,19 @@
+# Normalize line endings; let Git auto-detect text vs binary
+* text=auto eol=lf
+
+# Xcode project files — keep LF, reduce noisy merges
+*.pbxproj          text eol=lf
+*.xcworkspacedata  text eol=lf
+*.xcscheme         text eol=lf
+*.plist            text eol=lf
+*.swift            text eol=lf
+
+# Binaries
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.pdf  binary
+*.ttf  binary
+*.otf  binary
+*.xcassets/** binary
